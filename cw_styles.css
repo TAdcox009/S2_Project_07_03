@@ -26,13 +26,19 @@
 */
 /* Creates a style rule for the bottom navigation list displaying it as a flexbox with no wrapping, sets the justify-content property so that the flex items are centered along the main axis. add the WebKit browser extension,
 defines flex values so that the width never exceeds 150 pixels. */
-nav#bottom ul li {
+nav#bottom  {
     display: flex;
     display: -webkit-flex;
-    -webkit-flex-flow: row nowrap;
-    flex-flow: row nowrap;
+    flex-direction: row;
     justify-content: center;
-    flex: 150px;
+    -webkit-display: flex;
+    -webkit-flex-direction: row;
+    margin: auto;
+}
+
+nav#bottom ul {
+    max-width: 150px;
+    flex: 1;
 }
 
 /* ===============================
@@ -49,7 +55,7 @@ nav#bottom ul li {
 
     /* Hides the following elements for mobile users */
     aside,
-    img>article,
+    article>p>img,
     section#spotlight {
         display: none;
     }
@@ -58,53 +64,98 @@ nav#bottom ul li {
     nav#top ul {
         display: flex;
         display: -webkit-flex;
-        flex-flow: wrap;
+        flex-flow: row wrap;
         font-size: 2.2em;
         flex: 1 1 130px;
     }
-
-    ul li:nth-of-type(1) {
-        background: url(cw_image01.png) no-repeat;
+    /* changes the background to the image, Centers the background image with no tiling and sizes it 
+    so that the whole background is covered by the image */
+    nav#top ul li:nth-of-type(1) {
+        background: url(cw_image01.png)  no-repeat;
         width: 100%;
     }
 
-    ul li:nth-of-type(2) {
-        background: url(cw_image02.png) no-repeat;
+    nav#top ul li:nth-of-type(2) {
+        background: url(cw_image02.png)  no-repeat;
         width: 100%;
     }
 
-    ul li:nth-of-type(3) {
+    nav#top ul li:nth-of-type(3) {
         background: url(cw_image03.png) no-repeat;
         width: 100%;
     }
 
-    ul li:nth-of-type(4) {
+    nav#top ul li:nth-of-type(4) {
         background: url(cw_image04.png) no-repeat;
         width: 100%;
     }
 
-    ul li:nth-of-type(5) {
+    nav#top ul li:nth-of-type(5) {
         background: url(cw_image05.png) no-repeat;
         width: 100%;
     }
 
-    ul li:nth-of-type(6) {
-        background: url(cw_image06.png) no-repeat;
+    nav#top ul li:nth-of-type(6) {
+        background: url(cw_image06.png)  no-repeat;
         width: 100%;
     }
 
-    ul li:nth-of-type(7) {
-        background: url(cw_image07.png) no-repeat;
-        width: 100%;
+    /* paragraph with the id links, are being displayed as a flexbox row with no wrapping, then the justify-content is set
+     to space-around. */
+    p#links {
+        display: flex;
+        display: -webkit-flex;
+        -webkit-flex-flow: row nowrap;
+        flex-flow: row nowrap;
+        justify-content: space-around;
+    }
+/* for the a tags nested inside the p tag with the ID of links, the text color is being set to white, the background color
+is set to red, the border-radius is set to 20px making the  corners rounded, adds 10px of padding to the top, bottom, left.
+and right, it is also removing any text decoration such as underlining */
+    p#links a {
+        color: white;
+        background-color: rgb(220, 27, 27);
+        border-radius: 20px;
+        padding: 10px;
+        text-decoration: none;
     }
 }
-
-
-
 
 /* ============================================
 	Tablet and Desktop Devices: 481px or more 
    ============================================
 */
+@media only screen and (min-width:481px) {
+    body{
+        display: flex;
+        display: -webkit-flex;
+        -webkit-flex-flow: row nowrap;
+        flex-flow: row nowrap;
+    }
 
-/* 11. Sofia has placed hypertext links for the gallery’s phone number and e-mail address in a paragraph with the id links. For mobile users, she wants these two hypertext links spaced evenly within the paragraph that is displayed below the top navigation list. To format these links, create a style rule that displays the links paragraph as a flexbox row with no wrapping, then add a style that sets the value of the justify-content property of the paragraph to space-around. */
+    body>article {
+        flex: 2 1 400px;
+    }
+
+    body>aside {
+        flex: 1 2 200px;
+    }
+
+    nav#top {
+        flex-direction: row;
+        -webkit-flex-flow: row nowrap;
+        flex-flow: row nowrap;
+    }
+
+    nav#top ul li {
+        background-color: rgb(51, 51, 51);
+        height: 50px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    nav#top ul li {
+        flex: 1 1 80px
+
+    }
+}
