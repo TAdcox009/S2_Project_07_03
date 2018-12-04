@@ -156,8 +156,11 @@ and right, it is also removing any text decoration such as underlining */
         -webkit-flex-flow: row nowrap;
         flex-flow: row nowrap;
     }
-
-    nav#top ul li {
+/* 
+16. Define the flex size of each list item in the top navigation list to have a maximum width of 80 pixels but
+ to shrink at the same rate as the width if the navigation list is reduced.
+ */
+    nav#top li {
         background-color: rgb(51, 51, 51);
         height: 50px;
         justify-content: center;
@@ -171,7 +174,3 @@ and right, it is also removing any text decoration such as underlining */
     }
 }
 
-/* 
-16. Define the flex size of each list item in the top navigation list to have a maximum width of 80 pixels but
- to shrink at the same rate as the width if the navigation list is reduced.
- */
