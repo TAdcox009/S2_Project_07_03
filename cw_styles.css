@@ -68,11 +68,7 @@ nav#bottom ul {
 
     nav#top ul li {
         font-size: 2.2em;
-<<<<<<< HEAD
         -webkit-flex: 1 1 130px;
-=======
-        -webkit-flex:1 1 130px;
->>>>>>> master
         flex: 1 1 130px;
     }
 
@@ -155,13 +151,7 @@ nav#bottom ul {
         flex: 1 2 200px;
     }
 
-<<<<<<< HEAD
     /*The nav with the id top is being displayed as a horizontal row with no wrapping. Nav is being displayed as a flexboxwith a background color of rgb(51, 51, 51), has a height of 50 pixels, and is being centered both horizontally and vertically. */
-=======
-    /*The nav with the id top is being displayed as a horizontal row with no wrapping. Nav is being displayed as a flexbox
-     with a background color of rgb(51, 51, 51), has a height of 50 pixels, and is being centered both horizontally 
-     and vertically. */
->>>>>>> master
 
     nav#top ul {
         display: flex;
@@ -175,12 +165,8 @@ nav#bottom ul {
         align-items: center;
     }
 
-<<<<<<< HEAD
     /*  Defines the flex size of each li in the nav with the id of top to have a maxi width of 80 pixels and is able 
-=======
-    /*  Defin es the flex size of each li in the nav with the id of top to have a maxi width of 80 pixels and is able 
->>>>>>> master
- to shrink . */
+q to shrink . */
     nav#top ul li {
         -webkit-flex: 0 1 80px;
         flex: 0 1 80px;
