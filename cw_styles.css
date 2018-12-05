@@ -18,22 +18,19 @@
 
 /* Import Basic Design Styles  */
 /* imports the following style sheet */
-@import url(cw_designs.css);
+@import url("cw_designs.css");
 
 /* ===============================
 	General Styles for All Devices
    ===============================
 */
-/* Creates a style rule for the bottom navigation list displaying it as a flexbox with no wrapping, sets the justify-content property so that the flex items are centered along the main axis. add the WebKit browser extension,
-defines flex values so that the width never exceeds 150 pixels. */
-nav#bottom  {
-    display: flex;
+/* Creates a style rule for the bottom navigation list displaying it as a flexbox with no wrapping, sets the justify-content property so that the flex items are centered along the main axis. added the latest WebKit browser extension, defines flex values so that the width never exceeds 150 pixels. */
+nav#bottom {
     display: -webkit-flex;
-    flex-direction: row;
+    display: flex;
+    -webkit-flex-flow: row nowrap;
+    flex-flow: row nowrap;
     justify-content: center;
-    -webkit-display: flex;
-    -webkit-flex-direction: row;
-    margin: auto;
 }
 
 nav#bottom ul {
@@ -45,7 +42,7 @@ nav#bottom ul {
 	Mobile Styles up to 480 pixels
    ===============================
 */
-/* a media query for mobile screen devices with maximum widths of 480 pixels, sets the font color of the body text to rgb(211, 211, 211) and sets the body background color to rgb(51, 51, 51 */
+/* a media query for mobile screen devices with maximum widths of 480 pixels, sets the font color of the body text to rgb(211, 211, 211) and sets the body background color to rgb(51, 51, 51). */
 
 @media only screen and (max-width:480px) {
     body {
@@ -55,7 +52,7 @@ nav#bottom ul {
 
     /* Hides the following elements for mobile users */
     aside,
-    article>p>img,
+    article img,
     section#spotlight {
         display: none;
     }
@@ -64,19 +61,24 @@ nav#bottom ul {
     nav#top ul {
         display: flex;
         display: -webkit-flex;
+        -webkit-flex-flow: row wrap;
         flex-flow: row wrap;
+    }
+
+    nav#top ul li {
         font-size: 2.2em;
         flex: 1 1 130px;
     }
+
     /* changes the background to the image, Centers the background image with no tiling and sizes it 
     so that the whole background is covered by the image */
     nav#top ul li:nth-of-type(1) {
-        background: url(cw_image01.png)  no-repeat;
+        background: url(cw_image01.png) no-repeat;
         width: 100%;
     }
 
     nav#top ul li:nth-of-type(2) {
-        background: url(cw_image02.png)  no-repeat;
+        background: url(cw_image02.png) no-repeat;
         width: 100%;
     }
 
@@ -96,7 +98,7 @@ nav#bottom ul {
     }
 
     nav#top ul li:nth-of-type(6) {
-        background: url(cw_image06.png)  no-repeat;
+        background: url(cw_image06.png) no-repeat;
         width: 100%;
     }
 
@@ -109,9 +111,8 @@ nav#bottom ul {
         flex-flow: row nowrap;
         justify-content: space-around;
     }
-/* for the a tags nested inside the p tag with the ID of links, the text color is being set to white, the background color
-is set to red, the border-radius is set to 20px making the  corners rounded, adds 10px of padding to the top, bottom, left.
-and right, it is also removing any text decoration such as underlining */
+
+    /* for the a tags nested inside the p tag with the ID of links, the text color is being set to white, the background color is set to red, the border-radius is set to 20px making the  corners rounded, adds 10px of padding to the top, bottom, left, and right, it is also removing any text decoration such as underlining */
     p#links a {
         color: white;
         background-color: rgb(220, 27, 27);
@@ -129,7 +130,7 @@ and right, it is also removing any text decoration such as underlining */
 /* Media query for screen devices with a width of 481 pixels and greater
  Within this media query, display the page body as a flexbox in row orientation with wrapping. */
 @media only screen and (min-width:481px) {
-    body{
+    body {
         display: flex;
         display: -webkit-flex;
         -webkit-flex-flow: row wrap;
@@ -137,12 +138,14 @@ and right, it is also removing any text decoration such as underlining */
     }
 
     /* Set the growth, shrink, and basis value for the article element to 2, 1, and 400 pixels.*/
-    body>article {
+    article {
+        -webkit-flex: 2 1 400px;
         flex: 2 1 400px;
     }
 
     /* Sets the growth, shrink, and basis value for the aside element to 1, 2, and 200 pixels. */
-    body>aside {
+    aside {
+        -webkit-flex: 1 2 200px;
         flex: 1 2 200px;
     }
 
@@ -155,17 +158,19 @@ and right, it is also removing any text decoration such as underlining */
         flex-direction: row;
         -webkit-flex-flow: row nowrap;
         flex-flow: row nowrap;
-    }
-/* 
-16. Define the flex size of each list item in the top navigation list to have a maximum width of 80 pixels but
- to shrink at the same rate as the width if the navigation list is reduced.
- */
-    nav#top li {
         background-color: rgb(51, 51, 51);
         height: 50px;
         justify-content: center;
         align-items: center;
-        flex: 1 1 80px
+    }
+
+    /* 
+16. Define the flex size of each list item in the top navigation list to have a maximum width of 80 pixels but
+ to shrink at the same rate as the width if the navigation list is reduced.
+ */
+    nav#top ul li {
+        -webkit-flex: 0 1 80px;
+        flex: 0 1 80px
     }
 
     /* hides the p tag with the id of links */
@@ -173,4 +178,3 @@ and right, it is also removing any text decoration such as underlining */
         display: none;
     }
 }
-
