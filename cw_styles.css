@@ -35,6 +35,7 @@ nav#bottom {
 
 nav#bottom ul {
     max-width: 150px;
+    -webkit-flex: 1;
     flex: 1;
 }
 
@@ -67,6 +68,7 @@ nav#bottom ul {
 
     nav#top ul li {
         font-size: 2.2em;
+        -webkit-flex:1 1 130px;
         flex: 1 1 130px;
     }
 
@@ -149,12 +151,13 @@ nav#bottom ul {
         flex: 1 2 200px;
     }
 
-    /* 15. For tablet and desktop devices, the top navigation list should be displayed as a horizontal row with no wrapping.
-    Enter a style rule to display the top navigation list ul as a flexbox with a background color of rgb(51, 51, 51) 
-    and a height of 50 pixels. Use the justify-content and align-items property to center the flex items both horizontally
+    /*The nav with the id top is being displayed as a horizontal row with no wrapping. Nav is being displayed as a flexbox
+     with a background color of rgb(51, 51, 51), has a height of 50 pixels, and is being centered both horizontally 
      and vertically. */
 
     nav#top ul {
+        display: flex;
+        display: -webkit-flex;
         flex-direction: row;
         -webkit-flex-flow: row nowrap;
         flex-flow: row nowrap;
@@ -164,10 +167,8 @@ nav#bottom ul {
         align-items: center;
     }
 
-    /* 
-16. Define the flex size of each list item in the top navigation list to have a maximum width of 80 pixels but
- to shrink at the same rate as the width if the navigation list is reduced.
- */
+    /*  Defin es the flex size of each li in the nav with the id of top to have a maxi width of 80 pixels and is able 
+ to shrink . */
     nav#top ul li {
         -webkit-flex: 0 1 80px;
         flex: 0 1 80px
